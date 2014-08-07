@@ -1,0 +1,27 @@
+<h1>Listing edicions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Actual</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @edicions.each do |edicion| %>
+      <tr>
+        <td><%= edicion.nombre %></td>
+        <td><%= edicion.actual %></td>
+        <td><%= link_to 'Show', edicion %></td>
+        <td><%= link_to 'Edit', edit_edicion_path(edicion) %></td>
+        <td><%= link_to 'Destroy', edicion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Edicion', new_edicion_path %>

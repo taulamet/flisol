@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :edicions
+
   get '/inicio', to: redirect('/')
 
   get 'inicio' => 'inicio#index'
