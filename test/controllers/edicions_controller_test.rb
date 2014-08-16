@@ -18,7 +18,7 @@ class EdicionsControllerTest < ActionController::TestCase
 
   test "should create edicion" do
     assert_difference('Edicion.count') do
-      post :create, edicion: { actual: @edicion.actual, nombre: @edicion.nombre }
+      post :create, edicion: { actual: false, nombre: "nombre" }
     end
 
     assert_redirected_to edicion_path(assigns(:edicion))
