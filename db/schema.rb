@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 3) do
 
   create_table "edicions", force: true do |t|
-    t.string   "nombre"
-    t.boolean  "actual"
+    t.string   "nombre",     null: false
+    t.boolean  "actual",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
