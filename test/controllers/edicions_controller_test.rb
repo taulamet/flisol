@@ -24,6 +24,12 @@ class EdicionsControllerTest < ActionController::TestCase
     assert_redirected_to edicion_path(assigns(:edicion))
   end
 
+  test "should not create edicion with duplicated nombre" do
+    assert_no_difference('Edicion.count') do
+      post :create, edicion: { actual: false, nombre: @edicion.nombre }
+    end
+  end
+
   test "should show edicion" do
     get :show, id: @edicion
     assert_response :success
