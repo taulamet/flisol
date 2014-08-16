@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EdicionsControllerTest < ActionController::TestCase
   setup do
-    @edicion = edicions(:one)
+    @edicion = edicions(:anterior)
   end
 
   test "should get index" do
@@ -46,4 +46,11 @@ class EdicionsControllerTest < ActionController::TestCase
 
     assert_redirected_to edicions_path
   end
+
+
+  test "should ver edicion" do
+    get :ver, nombre: @edicion.nombre
+    assert_response :success
+  end
+
 end

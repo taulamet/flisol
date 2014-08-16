@@ -1,5 +1,11 @@
 class EdicionsController < ApplicationController
   before_action :set_edicion, only: [:show, :edit, :update, :destroy]
+  before_action :set_edicion_by_nombre, only: [:ver]
+
+  #  before_action :authenticate_usuario!, except: [:ver]
+  
+  def ver    
+  end
 
   # GET /edicions
   # GET /edicions.json
@@ -65,6 +71,10 @@ class EdicionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_edicion
       @edicion = Edicion.find(params[:id])
+    end
+
+    def set_edicion_by_nombre
+      @edicion = Edicion.find_by_nombre(params[:nombre])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

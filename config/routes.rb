@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :edicions
 
+  get 'edicion/:nombre' => 'edicions#ver'
+  
   get '/inicio', to: redirect('/')
 
-  get 'inicio' => 'inicio#index'
+  get 'inicio' => 'inicio#index'  
 
   devise_for :usuarios
   # The priority is based upon order of creation: first created -> highest priority.
