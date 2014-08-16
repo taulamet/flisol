@@ -2,5 +2,5 @@
 
 Ediciones Anteriores:
 <% Edicion.all.each do | ed | %>
-  <%= link_to(ed.nombre, ver_edicion_path(ed.nombre)) %>
+  <%= link_to("FLISOL #{ed.nombre}", ver_edicion_path(ed.nombre)) %>
 <% end %>
