@@ -1,1 +1,6 @@
-Edicion <%= @edicion.nombre %>
+<h1><%= "Edicion #{@edicion.nombre}" %></h1>
+
+Ediciones Anteriores:
+<% Edicion.all.each do | ed | %>
+  <%= link_to(ed.nombre, ver_edicion_path(ed.nombre)) %>
+<% end %>

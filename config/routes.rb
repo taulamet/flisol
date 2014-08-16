@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :edicions
 
-  get 'edicion/:nombre' => 'edicions#ver'
+  get 'edicion/:nombre' => 'edicions#ver', :as => :ver_edicion
   
   get '/inicio', to: redirect('/')
 
